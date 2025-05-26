@@ -43,10 +43,12 @@ output "current_subnet_availability_zones" {
   value       = local.subnet_availability_zones
 }
 
-output "subnetting_example" {
+output "calculated" {
   description = <<EOT
-An example of splitting the VPC's CIDR block into smaller subnets using the 'cidrsubnets' function.
-Each element is a CIDR block. Example: ['10.0.0.0/24', '10.0.1.0/24', '10.0.2.0/24', '10.0.3.0/24']
+Network calculation results based on provided CIDR block, subnet count, and subnet bit mask.
+Contains information about the base network and calculated subnets including:
+- Base network information (CIDR, mask, IP counts)
+- Subnet breakdown with CIDR ranges, IP addresses, and counts
 EOT
-  value       = local.subnetting_example
+  value       = local.network_calculations
 }
